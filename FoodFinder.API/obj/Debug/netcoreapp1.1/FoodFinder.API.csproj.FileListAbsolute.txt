@@ -1,0 +1,10 @@
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/bin/Debug/netcoreapp1.1/FoodFinder.API.deps.json
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/bin/Debug/netcoreapp1.1/FoodFinder.API.runtimeconfig.json
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/bin/Debug/netcoreapp1.1/FoodFinder.API.runtimeconfig.dev.json
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/bin/Debug/netcoreapp1.1/FoodFinder.API.dll
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/bin/Debug/netcoreapp1.1/FoodFinder.API.pdb
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/obj/Debug/netcoreapp1.1/FoodFinder.API.csprojResolveAssemblyReference.cache
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/obj/Debug/netcoreapp1.1/FoodFinder.API.csproj.CoreCompileInputs.cache
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/obj/Debug/netcoreapp1.1/FoodFinder.API.AssemblyInfo.cs
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/obj/Debug/netcoreapp1.1/FoodFinder.API.dll
+/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/obj/Debug/netcoreapp1.1/FoodFinder.API.pdb

@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{D62B1AF9-8A49-486A-BBEA-3B137265438C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FoodFinder.API/Controllers/VenuesController.cs">
+    <Files>
+      <File FileName="FoodFinder.API/Startup.cs" Line="68" Column="2" />
+      <File FileName="FoodFinder.API/Model/FoodFinderContext.cs" Line="8" Column="6" />
+      <File FileName="FoodFinder.API/Model/Venue.cs" Line="28" Column="16" />
+      <File FileName="FoodFinder.API/Controllers/VenuesController.cs" Line="18" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.FoodFinder.API PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
