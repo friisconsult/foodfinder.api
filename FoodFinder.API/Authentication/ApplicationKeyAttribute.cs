@@ -17,7 +17,7 @@ namespace FoodFinder.API.Authentication
 
         public ApplicationKeyAttributem()
         {
-            _applicationKey = "Stephen Fry";
+            _applicationKey = "Agrajag";
             _authenticationKey = "FC-APPLICATION-KEY";
         }
 

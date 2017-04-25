@@ -1,10 +1,13 @@
 ﻿using System;
+using FoodFinder.API.Authentication;
 using FoodFinder.API.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodFinder.API.Controllers
 {
     [Route("api/[controller]")]
+    [ServiceFilter(typeof(ApplicationKeyAttributem))]
     public class ReviewsController : Controller
     {
         private readonly FoodFinderContext _context;
@@ -24,7 +27,9 @@ namespace FoodFinder.API.Controllers
                 return NotFound($"No review with id {id} was found in the dataase");
         }
 
+
         [HttpPost]
+        [ServiceFilter(typeof(ApplicationKeyAttributem))]
         public IActionResult PostReview([FromBody] Review review)
         {
             review.Venue = _context.Venues.Find(review.VenueId);

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Linq;
+using FoodFinder.API.Authentication;
 using FoodFinder.API.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodFinder.API.Controllers
 {
     [Route("api/[controller]")]
+    [ServiceFilter(typeof(ApplicationKeyAttributem))]
     public class MenuItemController : Controller
     {
         private readonly FoodFinderContext _context;
@@ -35,7 +38,9 @@ namespace FoodFinder.API.Controllers
             return Ok(menu);
         }
 
+
         [HttpPost]
+
         public IActionResult PostMenuItem([FromBody] MenuItem menuItem)
         {
             menuItem.Venue = _context.Venues.Find(menuItem.VenueId);

@@ -3,10 +3,12 @@ using FoodFinder.API.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using FoodFinder.API.Authentication;
 
 namespace FoodFinder.API.Controllers
 {
     [Route("api/[controller]")]
+    [ServiceFilter(typeof(ApplicationKeyAttributem))]
     public class VenuesController : Controller
     {
         private readonly FoodFinderContext _context;
@@ -34,6 +36,7 @@ namespace FoodFinder.API.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(ApplicationKeyAttributem))]
         public IActionResult PostVenue([FromBody] Venue venue)
         {
             _context.Venues.Add(venue);

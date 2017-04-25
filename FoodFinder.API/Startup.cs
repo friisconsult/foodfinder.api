@@ -50,9 +50,8 @@ namespace FoodFinder.API
             // Add framework services.
             services.AddMvc();
 
-            // Add applicationkey security, but only for production
-            if (!_environment.IsDevelopment())
-                services.AddScoped<ApplicationKeyAttributem>();
+            // Add applicationkey security
+            services.AddScoped<ApplicationKeyAttributem>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
