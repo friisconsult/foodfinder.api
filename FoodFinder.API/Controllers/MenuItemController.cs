@@ -31,7 +31,7 @@ namespace FoodFinder.API.Controllers
         [HttpGet("menu/{venueId}")]
         public IActionResult Menu([FromRoute] Guid venueId)
         {
-            var menu = _context.MenuItems.Where(m => m.VenueId == venueId).OrderBy(m => m.Title).GroupBy(m => m.Type);
+            var menu = _context.MenuItems.Where(m => m.VenueId == venueId).OrderBy(m => m.Title);
             if (menu == null)
                 return NotFound();
 
@@ -40,7 +40,6 @@ namespace FoodFinder.API.Controllers
 
 
         [HttpPost]
-
         public IActionResult PostMenuItem([FromBody] MenuItem menuItem)
         {
             menuItem.Venue = _context.Venues.Find(menuItem.VenueId);
