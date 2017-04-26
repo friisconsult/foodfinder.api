@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using FoodFinder.API.Authentication;
 using FoodFinder.API.Model;
 using Microsoft.AspNetCore.Authorization;
@@ -25,6 +26,18 @@ namespace FoodFinder.API.Controllers
                 return Ok(comment);
             else
                 return NotFound($"No review with id {id} was found in the dataase");
+        }
+
+
+        [HttpGet("venue/{id}")]
+        public IActionResult ReviewFor([FromRoute] Guid id)
+        {
+            var reviews = _context.Reviews.Where(r => r.VenueId == id);
+            if (reviews != null)
+                return Ok(reviews);
+
+            return NotFound($"The venue with id:{id.ToString()} do not have any review at the moment");
+
         }
 
 
