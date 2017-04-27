@@ -10251,7 +10251,7 @@
       "projectUniqueName": "/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/FoodFinder.API.csproj",
       "projectName": "FoodFinder.API",
       "projectPath": "/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/FoodFinder.API.csproj",
-      "outputPath": "/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/obj",
+      "outputPath": "/Users/perfriis/RiderProjects/FullStack/FoodFinder.API/FoodFinder.API/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

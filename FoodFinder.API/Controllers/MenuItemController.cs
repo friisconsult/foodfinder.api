@@ -28,6 +28,12 @@ namespace FoodFinder.API.Controllers
             return NotFound();
         }
 
+        [HttpGet]
+        public IActionResult MenuItems()
+        {
+            return Ok(_context.MenuItems);
+        }
+
         [HttpGet("menu/{venueId}")]
         public IActionResult Menu([FromRoute] Guid venueId)
         {
