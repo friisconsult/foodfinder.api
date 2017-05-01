@@ -6,9 +6,6 @@ namespace FoodFinder.API.Model
     {
         public MenuItemType Type { get; set; }
         public double Price { get; set; }
-
-        public Guid VenueId { get; set; }
-        public Venue Venue { get; set; }
     }
 
     public enum MenuItemType

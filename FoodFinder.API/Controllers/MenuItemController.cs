@@ -4,6 +4,7 @@ using FoodFinder.API.Authentication;
 using FoodFinder.API.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoodFinder.API.Controllers
 {
@@ -37,7 +38,7 @@ namespace FoodFinder.API.Controllers
         [HttpGet("menu/{venueId}")]
         public IActionResult Menu([FromRoute] Guid venueId)
         {
-            var menu = _context.MenuItems.Where(m => m.VenueId == venueId).OrderBy(m => m.Title);
+            var menu = _context.Venues.Where(venue => venue.Id == venueId).Include(venue => venue.MenuItems);
             if (menu == null)
                 return NotFound();
 
@@ -45,14 +46,16 @@ namespace FoodFinder.API.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult PostMenuItem([FromBody] MenuItem menuItem)
-        {
-            menuItem.Venue = _context.Venues.Find(menuItem.VenueId);
-            if (menuItem.Venue == null)
-                return BadRequest($"No venues with id {menuItem.VenueId}");
+        [HttpPost("menu/{venueId}")]
 
-            _context.MenuItems.Add(menuItem);
+        public IActionResult PostMenuItem([FromRoute] Guid venueId, [FromBody] MenuItem menuItem)
+        {
+            var venue = _context.Venues.Find(venueId);
+            if (venue == null)
+                return NotFound();
+
+            venue.MenuItems.Add(menuItem);
+
             _context.SaveChanges();
 
             return Created(menuItem.Id.ToString(), menuItem);

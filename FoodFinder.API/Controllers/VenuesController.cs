@@ -21,7 +21,7 @@ namespace FoodFinder.API.Controllers
         [HttpGet]
         public IActionResult Venues()
         {
-            return Ok(_context.Venues);
+            return Ok(_context.Venues.Include(venue => venue.MenuItems).Include(venue => venue.Reviews));
         }
 
         [HttpGet("{venueId}")]

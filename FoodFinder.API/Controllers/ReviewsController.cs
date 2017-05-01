@@ -32,24 +32,24 @@ namespace FoodFinder.API.Controllers
         [HttpGet("venue/{id}")]
         public IActionResult ReviewFor([FromRoute] Guid id)
         {
-            var reviews = _context.Reviews.Where(r => r.VenueId == id);
-            if (reviews != null)
-                return Ok(reviews);
+//            var reviews = _context.Reviews.Where(r => r.VenueId == id);
+//            if (reviews != null)
+//                return Ok(reviews);
 
             return NotFound($"The venue with id:{id.ToString()} do not have any review at the moment");
 
         }
 
 
-        [HttpPost]
+        [HttpPost("{venueId}")]
         [ServiceFilter(typeof(ApplicationKeyAttributem))]
-        public IActionResult PostReview([FromBody] Review review)
+        public IActionResult PostReview([FromRoute] Guid venueId, [FromBody] Review review)
         {
-            review.Venue = _context.Venues.Find(review.VenueId);
-            if (review.Venue == null)
-                return BadRequest($"There is no venue with id:{review.VenueId}");
+            var venue = _context.Venues.Find(venueId);
+            if (venue == null)
+                return BadRequest($"There is no venue with id:{venueId}");
 
-            _context.Reviews.Add(review);
+            venue.Reviews.Add(review);
             _context.SaveChanges();
 
             return Created(review.Id.ToString(), review);
