@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="foodfinder" uuid="8ec45a92-4c96-46fd-9838-917871a3b4c0">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    <data-source name="Venue.db" uuid="26ce039e-bab1-48f3-8171-5f1359a3c630">
+      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
-      <first-sync>true</first-sync>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
   </component>
 </project>
