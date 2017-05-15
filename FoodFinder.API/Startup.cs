@@ -34,7 +34,7 @@ namespace FoodFinder.API
             services.AddDbContext<FoodFinderContext>(options =>
             {
                 if (_environment.IsDevelopment())
-                    options.UseSqlite("Data Source=Venue.db");
+                    options.UseSqlite(Configuration.GetConnectionString("SqliteConnectionString"));
                 else
                     options.UseSqlServer(Configuration.GetConnectionString("MS_TableConnectionString"));
             });
