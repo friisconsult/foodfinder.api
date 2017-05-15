@@ -32,10 +32,7 @@ namespace FoodFinder.API.Authentication
 
             string test = httpContextRequest.Headers[_authenticationKey];
 
-            if (test == null)
-                return false;
-
-            return (test.Equals(_applicationKey, StringComparison.Ordinal));
+            return test != null && (test.Equals(_applicationKey, StringComparison.Ordinal));
         }
     }
 }
