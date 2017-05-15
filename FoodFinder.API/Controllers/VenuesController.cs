@@ -58,8 +58,12 @@ namespace FoodFinder.API.Controllers
         [ServiceFilter(typeof(ApplicationKeyAttributem))]
         public IActionResult PostVenue([FromBody] Venue[] venues)
         {
+            if (venues.Any(v => v.Owner == null))
+                return BadRequest("One or more venues has no owner");
+
             foreach (var venue in venues)
             {
+
                  _context.Venues.Add(venue);
                             _context.SaveChanges();
             }

@@ -7,7 +7,9 @@ namespace FoodFinder.API.Model
         public Guid Id { get; set; }
         public long Version { get; set; }
         public DateTime Created { get; set; }
-
+        public bool Deleted { get; set; }
+        public string Owner { get; set; }
+        
         public string Title { get; set; }
         public string Detail { get; set; }
 
