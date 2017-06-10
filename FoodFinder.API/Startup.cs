@@ -48,7 +48,11 @@ namespace FoodFinder.API
             });
 
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                options.SerializerSettings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+            });
 
             // Add applicationkey security
             services.AddScoped<ApplicationKeyAttributem>();
