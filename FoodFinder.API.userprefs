@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{D62B1AF9-8A49-486A-BBEA-3B137265438C}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workbench ActiveDocument="FoodFinder.API Status">
     <Files>
-      <File FileName="FoodFinder.API/Startup.cs" Line="55" Column="16" />
+      <File FileName="FoodFinder.API/Startup.cs" Line="54" Column="74" />
       <File FileName="FoodFinder.API/Model/FoodFinderContext.cs" Line="8" Column="6" />
       <File FileName="FoodFinder.API/Model/Venue.cs" Line="28" Column="1" />
       <File FileName="FoodFinder.API/Controllers/VenuesController.cs" Line="18" Column="10" />
