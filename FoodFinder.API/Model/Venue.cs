@@ -28,8 +28,8 @@ namespace FoodFinder.API.Model
 
         public double PriceLevel { get; set; } = 50;
 
-        public  ICollection<MenuItem> MenuItems { get; set; }
-        public   ICollection<Review> Reviews { get; set; }
+        public ICollection<MenuItem> MenuItems { get; set; }
+        public ICollection<Review> Reviews { get; set; }
 
         public Venue()
         {
