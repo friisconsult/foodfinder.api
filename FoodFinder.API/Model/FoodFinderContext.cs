@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.PlatformAbstractions;
+﻿using Microsoft.EntityFrameworkCore;
 namespace FoodFinder.API.Model
 {
     public sealed class FoodFinderContext : DbContext

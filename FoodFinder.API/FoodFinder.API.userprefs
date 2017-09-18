@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{0963845E-BAE8-4754-9F61-49F9CADD9CEA}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Authentication/ApplicationKeyAttribute.cs">
+    <Files>
+      <File FileName="Authentication/ApplicationKeyAttribute.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.FoodFinder.API PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

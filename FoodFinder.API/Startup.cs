@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace FoodFinder.API
 {
@@ -34,7 +35,7 @@ namespace FoodFinder.API
             services.AddDbContext<FoodFinderContext>(options =>
             {
                 if (_environment.IsDevelopment())
-                    options.UseSqlite("Data Source=Venue.db");
+                    options.UseSqlite(Configuration.GetConnectionString("SqliteConnectionString"));
                 else
                     options.UseSqlServer(Configuration.GetConnectionString("MS_TableConnectionString"));
             });
@@ -48,11 +49,14 @@ namespace FoodFinder.API
             });
 
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                options.SerializerSettings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+            });
 
-            // Add applicationkey security, but only for production
-            if (!_environment.IsDevelopment())
-                services.AddScoped<ApplicationKeyAttributem>();
+            // Add applicationkey security
+            services.AddScoped<ApplicationKeyAttributem>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

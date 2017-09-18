@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.Extensions.Primitives;
 
 namespace FoodFinder.API.Authentication
 {
@@ -17,7 +15,7 @@ namespace FoodFinder.API.Authentication
 
         public ApplicationKeyAttributem()
         {
-            _applicationKey = "Stephen Fry";
+            _applicationKey = "Agrajag";
             _authenticationKey = "FC-APPLICATION-KEY";
         }
 
@@ -34,10 +32,7 @@ namespace FoodFinder.API.Authentication
 
             string test = httpContextRequest.Headers[_authenticationKey];
 
-            if (test == null)
-                return false;
-
-            return (test.Equals(_applicationKey, StringComparison.Ordinal));
+            return test != null && (test.Equals(_applicationKey, StringComparison.Ordinal));
         }
     }
 }
